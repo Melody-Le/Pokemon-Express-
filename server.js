@@ -1,10 +1,16 @@
 const express = require("express");
-const res = require("express/lib/response");
 const app = express();
+
+const pokemon = require("./models/pokemon");
+
 const port = 3000;
 
 app.get("/", (req, res) => {
   res.send("Hi");
+});
+
+app.get("/pokemon", (req, res) => {
+  res.send(pokemon);
 });
 
 app.listen(port, () => {
